@@ -7,21 +7,19 @@ public class CalculadoraDescomptes {
         if (preu <= 0 || quantitat <= 0) {
             return 0;
         }
-        // Calcular descompte
-        int descompte = (preu * quantitat) * 10 / 100;
-        // Retornar descompte
-        return descompte;
+        // Calcular descompte i Retornar Descompte
+        return(preu * quantitat) * 10 / 100;
+        
     }
 
     public int calcularDescompteDevolucio(int preu, int quantitat) {
         // Validar entrada
         if (preu <= 0 || quantitat <= 0) {
             return 0;
-        }
-        // Calcular descompte
-        int descompte = (preu * quantitat) * 5 / 100;
-        // Retornar descompte
-        return descompte;
+        } 
+        // Calcular i retornar descompte
+        return  (preu * quantitat) * 5 / 100;
+        
     }
 
     public static void main(String[] args) {

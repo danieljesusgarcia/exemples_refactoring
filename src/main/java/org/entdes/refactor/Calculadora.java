@@ -2,46 +2,44 @@ package org.entdes.refactor;
 
 public class Calculadora {
 
-    public int calcularAreaRectangle(int a, int b) {
-        return multiplicar(a, b);
+    public int calcularAreaRectangle(int altura, int base) {
+        return multiplicar(altura, base);
     }
 
-    private int multiplicar(int a, int b) {
-        return a * b;
+    private int multiplicar(int numero1, int numero2) {
+        return numero1 * numero2;
     }
 
-    public boolean esNombreParell(int a) {
-        return comprovarSiEsParell(a);
+    public boolean esNombreParell(int numero) {
+        return comprovarSiEsParell(numero);
     }
 
-    private boolean comprovarSiEsParell(int a) {
-        return a % 2 == 0;
+    private boolean comprovarSiEsParell(int numero) {
+        return numero % 2 == 0;
     }
     
-    public double calcularPreuFinal(double a, int b, double c) {
-        double d = afegirImpostos(a, b);
-        return aplicarDescompte(d, c);
+    public double calcularPreuFinal(double preu, int opcio, double descompte) {
+        double preuFinal = afegirImpostos(preu, opcio);
+        return aplicarDescompte(preuFinal, descompte);
     }
 
-
-
-    private double afegirImpostos(double a, int b) {
-        double c = 0;
-        switch (b) {
+    private double afegirImpostos(double preu, int opcio) {
+        double impost = 0; 
+        switch (opcio) {
             case 1:
-                c = 0.21;
+                impost = 0.21;
                 break;
             case 2:
-                c = 0.1;
+                impost = 0.1;
                 break;
             default:
                 break;
         }
-        return a + (a * c);
+        return preu + (preu * impost);
     }
 
-    private double aplicarDescompte(double a, double b) {
-        return a - (a * b);
+    private double aplicarDescompte(double preu, double descompte) {
+        return preu - (preu * descompte);
     }
 
     public static void main(String[] args) {

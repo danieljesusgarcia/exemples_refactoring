@@ -10,21 +10,18 @@ public class CalculadoraDescomptes {
     public int calcularDescompteDevolucio(int preu, int quantitat) {
         if(!validarEntrada(preu, quantitat))return 0; 
         return calcularDescompte(preu, quantitat, 5);
-    }
-
+    } 
+ 
     
-    public boolean validarEntrada(int preu, int quantitat){
+    public boolean validarEntrada(int preu, int quantitat){ 
         if (preu <= 0 || quantitat <= 0) return false; 
         return true; 
     }
-
-    public int calcularDescompte (int preu, int quantitat, int num){
-        int descompte = (preu * quantitat) * num / 100;
-        return descompte;
+    
+    public int calcularDescompte (int preu, int quantitat, int descompte){
+        return (preu * quantitat) * descompte / 100;
     }
-
-    
-    
+     
     public static void main(String[] args) {
         CalculadoraDescomptes calc = new CalculadoraDescomptes();
 

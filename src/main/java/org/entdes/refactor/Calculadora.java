@@ -3,21 +3,16 @@ package org.entdes.refactor;
 public class Calculadora {
 
     public int calcularAreaRectangle(int a, int b) {
-        return multiplicar(a, b);
-    }
-
-    private int multiplicar(int a, int b) {
         return a * b;
     }
 
-    public boolean esNombreParell(int a) {
-        return comprovarSiEsParell(a);
-    }
+    
 
-    private boolean comprovarSiEsParell(int a) {
+    public boolean esNombreParell(int a) {
         return a % 2 == 0;
     }
-    
+
+        
     public double calcularPreuFinal(double a, int b, double c) {
         double d = afegirImpostos(a, b);
         return aplicarDescompte(d, c);
@@ -33,8 +28,6 @@ public class Calculadora {
                 break;
             case 2:
                 c = 0.1;
-                break;
-            default:
                 break;
         }
         return a + (a * c);

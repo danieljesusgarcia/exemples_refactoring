@@ -4,18 +4,23 @@ class Personatge {
     protected String nom;
         private String tipus;
     
-        public Personatge(String nom, String tipus) {
-            this.nom = nom;
-            this.tipus = tipus;
+    public Personatge(String nom, String tipus) {
+        this.nom = nom;
+        this.tipus = tipus;
     }
 
     public void atacar() {
-        if(tipus.equals("Tirador")) {
-            System.out.println(nom + " dispara amb una arma de foc!");
-        } else if(tipus.equals("Arquer")) {
-            System.out.println(nom + " llença una fletxa!");
-        } else if(tipus.equals("Lluitador")) {
-            System.out.println(nom + " dona un cop de puny!");
+        switch (tipus) {
+            case "Tirador":
+                System.out.println(nom + " dispara amb una arma de foc!");
+                break;
+            case "Arquer":
+                System.out.println(nom + " llença una fletxa!");
+                break;
+            case "Lluitador":
+                System.out.println(nom + " dona un cop de puny!");
+            default:
+                break;
         }
     }
 }

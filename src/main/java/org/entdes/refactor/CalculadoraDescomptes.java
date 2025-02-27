@@ -1,23 +1,34 @@
 package org.entdes.refactor;
 
 public class CalculadoraDescomptes {
+    
+    public boolean isZero(int a, int b){
+        if (a <= 0 || b <= 0) {
+            return false;
+        }
+        return true;
+    }
+
+    public int calcularDescompte(int preu, int quantitat, int descompte){
+        return (preu * quantitat) * descompte / 100;
+    }
 
     public int calcularDescompteComanda(int preu, int quantitat) {
         // Validar entrada
-        if (preu <= 0 || quantitat <= 0) {
+        if (isZero(preu, quantitat)) {
             return 0;
         }
         // Calcular descompte
-        return (preu * quantitat) * 10 / 100;
+        return calcularDescompte(preu, quantitat, 10);
     }
 
     public int calcularDescompteDevolucio(int preu, int quantitat) {
         // Validar entrada
-        if (preu <= 0 || quantitat <= 0) {
+        if (isZero(preu, quantitat)) {
             return 0;
         }
         // Calcular descompte
-        return (preu * quantitat) * 5 / 100;
+        return calcularDescompte(preu, quantitat, 5);
     }
 
     public static void main(String[] args) {

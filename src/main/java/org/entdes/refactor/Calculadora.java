@@ -11,12 +11,10 @@ public class Calculadora {
     }
 
     public boolean esNombreParell(int a) {
-        return comprovarSiEsParell(a);
+        return a % 2 == 0;
+        
     }
 
-    private boolean comprovarSiEsParell(int a) {
-        return a % 2 == 0;
-    }
     
     public double calcularPreuFinal(double a, int b, double c) {
         double d = afegirImpostos(a, b);

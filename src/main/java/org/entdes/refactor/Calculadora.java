@@ -16,7 +16,6 @@ public class Calculadora {
     }
 
 
-
     private double afegirImpostos(double a, int b) {
         double c = 0;
         switch (b) {

@@ -3,18 +3,10 @@ package org.entdes.refactor;
 public class Calculadora {
 
     public int calcularAreaRectangle(int a, int b) {
-        return multiplicar(a, b);
+        return a*b;
     }
 
-    private int multiplicar(int a, int b) {
-        return a * b;
-    }
-
-    public boolean esNombreParell(int a) {
-        return comprovarSiEsParell(a);
-    }
-
-    private boolean comprovarSiEsParell(int a) {
+    public boolean comprovarSiEsParell(int a) {
         return a % 2 == 0;
     }
     
@@ -34,8 +26,6 @@ public class Calculadora {
             case 2:
                 c = 0.1;
                 break;
-            default:
-                break;
         }
         return a + (a * c);
     }
@@ -50,6 +40,6 @@ public class Calculadora {
         System.out.println("Àrea: " + calc.calcularAreaRectangle(5, 10));
         System.out.println("Preu final general: " + calc.calcularPreuFinal(100, 1, 0.1));
         System.out.println("Preu final reduït: " + calc.calcularPreuFinal(100, 2, 0.1));
-        System.out.println("És parell? " + calc.esNombreParell(8));
+        System.out.println("És parell? " + calc.comprovarSiEsParell(8));
     }
 }

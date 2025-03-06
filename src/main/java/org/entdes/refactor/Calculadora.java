@@ -2,8 +2,8 @@ package org.entdes.refactor;
 
 public class Calculadora {
 
-    Double IMPOST1 = 0.21;
-    Double IMPOST2 = 0.1;
+    final Double IMPOSTGENERAL = 0.21;
+    final Double IMPOSTREDUIT = 0.1;
 
     public int calcularAreaRectangle(int base, int altura) {
         return multiplicar(base, altura);
@@ -29,9 +29,9 @@ public class Calculadora {
     private double afegirImpostos(double preu, int tipusImpost) {
         switch (tipusImpost) {
             case 1:
-                return preu + (preu * IMPOST1);
+                return preu + (preu * IMPOSTGENERAL);
             case 2:
-                return preu + (preu * IMPOST2);
+                return preu + (preu * IMPOSTREDUIT);
             default:
                 break;
         }

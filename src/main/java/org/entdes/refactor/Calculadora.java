@@ -2,6 +2,9 @@ package org.entdes.refactor;
 
 public class Calculadora {
 
+    private static final double IMPOST_GENERAL = 0.21;
+    private static final double IMPOST_REDUIT = 0.21;
+
     public int calcularAreaRectangle(int altura, int base) {
         return altura * base;
     }
@@ -24,10 +27,10 @@ public class Calculadora {
         double impostPercentage = 0;
         switch (tipusImpost) {
             case 1:
-                impostPercentage = 0.21;
+                impostPercentage = IMPOST_GENERAL;
                 break;
             case 2:
-                impostPercentage = 0.1;
+                impostPercentage = IMPOST_REDUIT;
                 break;
         }
         return quantitatBase + (quantitatBase * impostPercentage);

@@ -20,8 +20,8 @@ class Persona {
         return cognom;
     }
 
-    public static String getNomComplet(Persona persona) {
-        return persona.getNom() + " " + persona.getCognom();
+    public String getNomComplet() {
+        return this.getNom() + " " + this.getCognom();
        
     }
 
@@ -42,7 +42,7 @@ class Grup {
     public String llistarPersones() {
         StringBuilder llista = new StringBuilder();
         for (Persona persona : persones) {
-            String nomComplet = Persona.getNomComplet(persona);
+            String nomComplet = persona.getNomComplet();
             llista.append(nomComplet).append("\n");
         }
         return llista.toString();

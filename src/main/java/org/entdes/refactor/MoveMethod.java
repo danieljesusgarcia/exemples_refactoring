@@ -19,6 +19,13 @@ class Persona {
         return cognom;
     }
 
+    private String getNomComplet() {
+        return this.getNom() + " " + this.getCognom();
+    }
+    
+    public static String getNomComplet(Persona persona){
+        return persona.getNomComplet();
+    }
 }
 
 class Grup {
@@ -41,10 +48,9 @@ class Grup {
         }
         return llista.toString();
     }
-    
-    private String getNomComplet(Persona persona) {
-        return persona.getNom() + " " + persona.getCognom();
-       
+
+    public String getNomComplet(Persona persona){
+        return Persona.getNomComplet(persona);
     }
 }
 

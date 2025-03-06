@@ -10,23 +10,23 @@ public class Calculadora {
         return numero % 2 == 0;
     }
     
-    public double calcularPreuFinal(double preuProducte, int quantitat, double descompte) {
-        double preuTotalImpostos = afegirImpostos(preuProducte, quantitat);
+    public double calcularPreuFinal(double preuProducte, int impost, double descompte) {
+        double preuTotalImpostos = afegirImpostos(preuProducte, impost);
         return aplicarDescompte(preuTotalImpostos, descompte);
     }
 
 
     private double afegirImpostos(double preuProducte, int impost) {
-        double c = 0;
+        double percentatgeImpost = 0;
         switch (impost) {
             case 1:
-                c = 0.21;
+                percentatgeImpost = 0.21;
                 break;
             case 2:
-                c = 0.1;
+                percentatgeImpost = 0.1;
                 break;
         }
-        return preuProducte + (preuProducte * c);
+        return preuProducte + (preuProducte * percentatgeImpost);
     }
 
     private double aplicarDescompte(double descompte, double preuProducte) {

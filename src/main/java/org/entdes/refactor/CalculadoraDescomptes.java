@@ -4,27 +4,31 @@ public class CalculadoraDescomptes {
 
     public int calcularDescompteComanda(int preu, int quantitat) {
         // Validar entrada
-        validarDescompte(preu, quantitat);
+        if (validarDescompte(preu, quantitat)) return 0;
         // Calcular descompte
         int descompte = (preu * quantitat) * 10 / 100;
         // Retornar descompte
-        return descompte;
+        return calcularDescompte(preu, quantitat, descompte);
     }
 
     public int calcularDescompteDevolucio(int preu, int quantitat) {
         // Validar entrada
-        validarDescompte(preu, quantitat);
+        if (validarDescompte(preu, quantitat)) return 0;
         // Calcular descompte
         int descompte = (preu * quantitat) * 5 / 100;
         // Retornar descompte
-        return descompte;
+        return calcularDescompte(preu, quantitat, descompte);
     }
 
-    private int validarDescompte(int preu, int quantitat) {
+    private int calcularDescompte(int preu, int quantitat, int descompte) {
+        return (preu * quantitat) * descompte / 100;
+    }
+
+    private boolean  validarDescompte(int preu, int quantitat) {
         if (preu <= 0 || quantitat <= 0) {
-            return 0;
+            return true;
         }
-        return 1;
+        return false;
     }
 
     public static void main(String[] args) {

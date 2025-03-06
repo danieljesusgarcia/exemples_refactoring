@@ -2,8 +2,11 @@ package org.entdes.refactor;
 
 public class Calculadora {
 
-    public int calcularAreaRectangle(int a, int b) {
-        return multiplicar(a, b);
+    Double IMPOST1 = 0.21;
+    Double IMPOST2 = 0.1;
+
+    public int calcularAreaRectangle(int base, int altura) {
+        return multiplicar(base, altura);
     }
 
     private int multiplicar(int a, int b) {
@@ -18,30 +21,25 @@ public class Calculadora {
         return a % 2 == 0;
     }
     
-    public double calcularPreuFinal(double a, int b, double c) {
-        double d = afegirImpostos(a, b);
-        return aplicarDescompte(d, c);
+    public double calcularPreuFinal(double preu, int tipusImpost, double descompte) {
+        double preuFinal = afegirImpostos(preu, tipusImpost);
+        return aplicarDescompte(preuFinal, descompte);
     }
 
-
-
-    private double afegirImpostos(double a, int b) {
-        double c = 0;
-        switch (b) {
+    private double afegirImpostos(double preu, int tipusImpost) {
+        switch (tipusImpost) {
             case 1:
-                c = 0.21;
-                break;
+                return preu + (preu * IMPOST1);
             case 2:
-                c = 0.1;
-                break;
+                return preu + (preu * IMPOST2);
             default:
                 break;
         }
-        return a + (a * c);
+        return 0;
     }
 
-    private double aplicarDescompte(double a, double b) {
-        return a - (a * b);
+    private double aplicarDescompte(double preu, double descompte) {
+        return preu - (preu * descompte);
     }
 
     public static void main(String[] args) {

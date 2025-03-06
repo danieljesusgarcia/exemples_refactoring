@@ -6,6 +6,7 @@ class Persona {
     private String nom;
     private String cognom;
 
+    
     public Persona(String nom, String cognom) {
         this.nom = nom;
         this.cognom = cognom;
@@ -17,6 +18,11 @@ class Persona {
 
     public String getCognom() {
         return cognom;
+    }
+
+    public static String getNomComplet(Persona persona) {
+        return persona.getNom() + " " + persona.getCognom();
+       
     }
 
 }
@@ -36,15 +42,10 @@ class Grup {
     public String llistarPersones() {
         StringBuilder llista = new StringBuilder();
         for (Persona persona : persones) {
-            String nomComplet = this.getNomComplet(persona);
+            String nomComplet = Persona.getNomComplet(persona);
             llista.append(nomComplet).append("\n");
         }
         return llista.toString();
-    }
-    
-    private String getNomComplet(Persona persona) {
-        return persona.getNom() + " " + persona.getCognom();
-       
     }
 }
 

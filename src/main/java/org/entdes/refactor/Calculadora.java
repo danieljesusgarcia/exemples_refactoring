@@ -2,6 +2,9 @@ package org.entdes.refactor;
 
 public class Calculadora {
 
+    private static final double IMPOST_GENERAL = 0.21;
+    private static final double IMPOST_REDUIT = 0.1;
+
     public int calcularAreaRectangle(int area, int base) {
         return area*base;
     }
@@ -20,10 +23,10 @@ public class Calculadora {
         double percentatgeImpost = 0;
         switch (impost) {
             case 1:
-                percentatgeImpost = 0.21;
+                percentatgeImpost = IMPOST_GENERAL;
                 break;
             case 2:
-                percentatgeImpost = 0.1;
+                percentatgeImpost = IMPOST_REDUIT;
                 break;
         }
         return preuProducte + (preuProducte * percentatgeImpost);

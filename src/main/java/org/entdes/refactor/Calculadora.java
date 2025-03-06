@@ -2,39 +2,39 @@ package org.entdes.refactor;
 
 public class Calculadora {
 
-    public int calcularAreaRectangle(int a, int b) {
-        return a * b;
+    public int calcularAreaRectangle(int altura, int base) {
+        return altura * base;
     }
 
     
 
-    public boolean esNombreParell(int a) {
-        return a % 2 == 0;
+    public boolean esNombreParell(int nombre) {
+        return nombre % 2 == 0;
     }
 
         
-    public double calcularPreuFinal(double a, int b, double c) {
-        double d = afegirImpostos(a, b);
-        return aplicarDescompte(d, c);
+    public double calcularPreuFinal(double preu, int impost, double descompte) {
+        double preuTotalAmbImpostos = afegirImpostos(preu, impost);
+        return aplicarDescompte(preuTotalAmbImpostos, descompte);
     }
 
 
 
-    private double afegirImpostos(double a, int b) {
-        double c = 0;
-        switch (b) {
+    private double afegirImpostos(double quantitatBase, int tipusImpost) {
+        double impostPercentage = 0;
+        switch (tipusImpost) {
             case 1:
-                c = 0.21;
+                impostPercentage = 0.21;
                 break;
             case 2:
-                c = 0.1;
+                impostPercentage = 0.1;
                 break;
         }
-        return a + (a * c);
+        return quantitatBase + (quantitatBase * impostPercentage);
     }
 
-    private double aplicarDescompte(double a, double b) {
-        return a - (a * b);
+    private double aplicarDescompte(double preuOriginal, double descomptePercentatge) {
+        return preuOriginal - (preuOriginal * descomptePercentatge);
     }
 
     public static void main(String[] args) {

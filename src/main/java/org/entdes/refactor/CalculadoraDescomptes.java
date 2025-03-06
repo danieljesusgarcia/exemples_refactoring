@@ -24,7 +24,6 @@ public class CalculadoraDescomptes {
      
     public static void main(String[] args) {
         CalculadoraDescomptes calc = new CalculadoraDescomptes();
-
         System.out.println("Descompte comanda: " + calc.calcularDescompteComanda(100, 5));
         System.out.println("Descompte devolució: " + calc.calcularDescompteDevolucio(100, 5));
     }

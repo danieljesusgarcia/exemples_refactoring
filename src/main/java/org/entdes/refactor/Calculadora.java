@@ -2,6 +2,9 @@ package org.entdes.refactor;
 
 public class Calculadora {
 
+    public final double  IVA1 = 0.21;
+    public final double  IVA2 = 0.1;
+
     public int calcularAreaRectangle(int altura, int base) {
         return multiplicar(altura, base);
     }
@@ -22,15 +25,15 @@ public class Calculadora {
         double preuFinal = afegirImpostos(preu, opcio);
         return aplicarDescompte(preuFinal, descompte);
     }
-
+ 
     private double afegirImpostos(double preu, int opcio) {
         double impost = 0; 
         switch (opcio) {
             case 1:
-                impost = 0.21;
-                break;
+                impost = IVA1;
+                break;  
             case 2:
-                impost = 0.1;
+                impost = IVA2;
                 break;
             default:
                 break;

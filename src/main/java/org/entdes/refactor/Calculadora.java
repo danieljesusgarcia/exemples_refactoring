@@ -17,16 +17,16 @@ public class Calculadora {
     }
 
     private double afegirImpostos(double base, int impost) {
-        double c = 0;
+        double descompte = 0;
         switch (impost) {
             case 1:
-                c = 0.21;
+                descompte = 0.21;
                 break;
             case 2:
-                c = 0.1;
+                descompte = 0.1;
                 break;
         }
-        return base + (base * c);
+        return base + (base * descompte);
     }
 
     private double aplicarDescompte(double preu, double descompte) {

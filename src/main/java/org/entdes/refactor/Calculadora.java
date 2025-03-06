@@ -2,8 +2,8 @@ package org.entdes.refactor;
 
 public class Calculadora {
 
-    private static final double DESCOMPTE_IVA = 0.21;
-    private static final double DESCOMPTE_GENERAL = 0.1;
+    private static final double IMPOST_GENERAL = 0.21;
+    private static final double IMPOST_REDUIT = 0.1;
 
     public int calcularAreaRectangle(int base, int altura) {
         return base * altura;
@@ -23,10 +23,10 @@ public class Calculadora {
         double descompte = 0;
         switch (tipusImpost) {
             case 1:
-                descompte = DESCOMPTE_IVA;
+                descompte = IMPOST_REDUIT;
                 break;
             case 2:
-                descompte = DESCOMPTE_GENERAL;
+                descompte = IMPOST_GENERAL;
                 break;
         }
         return base + (base * descompte);

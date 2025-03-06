@@ -3,7 +3,7 @@ package org.entdes.refactor;
 public class Calculadora {
 
     public int calcularAreaRectangle(int base, int altura) {
-        return altura * altura;
+        return base * altura;
     }
 
     public boolean esNombreParell(int num) {
@@ -12,13 +12,13 @@ public class Calculadora {
     }
 
     public double calcularPreuFinal(double preuBase, int numImpostos, double percentatgeDescompte) {
-        double d = afegirImpostos(preuBase, numImpostos);
-        return aplicarDescompte(d, percentatgeDescompte);
+        double preuImpost = afegirImpostos(preuBase, numImpostos);
+        return aplicarDescompte(preuImpost, percentatgeDescompte);
     }
 
-    private double afegirImpostos(double base, int impost) {
+    private double afegirImpostos(double base, int tipusImpost) {
         double descompte = 0;
-        switch (impost) {
+        switch (tipusImpost) {
             case 1:
                 descompte = 0.21;
                 break;

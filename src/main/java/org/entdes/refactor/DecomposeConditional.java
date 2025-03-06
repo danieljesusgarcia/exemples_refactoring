@@ -18,10 +18,18 @@ class Usuari {
         this.esActiu = esActiu;
     }
 
+    public boolean teAcces(){
+        return esAdmin || (haPagatSubscripcio && esActiu);
+    }
+
+    public void actualitzarUltimaConnexio(){
+        this.dataUltimaConnexio = LocalDate.now();
+        this.ipUltimaConnexio = randomIp();
+    }
+
     public void actualitzarUsuari() {
-        if (esAdmin || (haPagatSubscripcio && esActiu)) {
-            this.dataUltimaConnexio = LocalDate.now();
-            this.ipUltimaConnexio = randomIp();
+        if (teAcces()) {
+            actualitzarUltimaConnexio();
         } else {
             System.out.println("L'usuari " + this.nom + " no té accés.");
         }

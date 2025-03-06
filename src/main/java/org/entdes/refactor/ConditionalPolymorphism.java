@@ -1,27 +1,42 @@
 package org.entdes.refactor;
 
-class Personatge {
+abstract class Personatge {
     protected String nom;
-        private String tipus;
     
-    public Personatge(String nom, String tipus) {
+    public Personatge(String nom) {
         this.nom = nom;
-        this.tipus = tipus;
     }
 
-    public void atacar() {
-        switch (tipus) {
-            case "Tirador":
-                System.out.println(nom + " dispara amb una arma de foc!");
-                break;
-            case "Arquer":
-                System.out.println(nom + " llença una fletxa!");
-                break;
-            case "Lluitador":
-                System.out.println(nom + " dona un cop de puny!");
-            default:
-                break;
-        }
+    public abstract void atacar();
+}
+
+class Tirador extends Personatge{
+    public Tirador(String nom){
+        super(nom);
+    }
+
+    public void Atacar(){
+        System.out.println(nom + " dispara amb una arma de foc!");
+    }
+}
+
+class Arquer extends Personatge{
+    public Arquer(String nom){
+        super(nom);
+    }
+
+    public void Atacar(){
+        System.out.println(nom + " llença una fletxa!");
+    }
+}
+
+class Lluitador extends Personatge{
+    public Lluitador(String nom){
+        super(nom);
+    }
+
+    public void Atacar(){
+        System.out.println(nom + " dona un cop de puny!");
     }
 }
 
@@ -29,12 +44,12 @@ class Personatge {
 public class ConditionalPolymorphism {
 
     public static void main(String[] args) {
-        Personatge tirador = new Personatge("John", "Tirador");
-        Personatge arquer = new Personatge("Robin", "Arquer");
-        Personatge lluitador = new Personatge("Bruce", "Lluitador");
+        Personatge tirador = new Tirador("John");
+        //Personatge arquer = new Personatge("Robin", "Arquer");
+        //Personatge lluitador = new Personatge("Bruce", "Lluitador");
 
         tirador.atacar();
-        arquer.atacar();
-        lluitador.atacar();
+        //arquer.atacar();
+        //lluitador.atacar();
     }
 }

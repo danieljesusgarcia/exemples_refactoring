@@ -19,6 +19,11 @@ class Persona {
         return cognom;
     }
 
+    String getNomComplet() {
+        return getNom() + " " + getCognom();
+       
+    }
+
 }
 
 class Grup {
@@ -36,17 +41,14 @@ class Grup {
     public String llistarPersones() {
         StringBuilder llista = new StringBuilder();
         for (Persona persona : persones) {
-            String nomComplet = this.getNomComplet(persona);
+            String nomComplet = persona.getNomComplet();
             llista.append(nomComplet).append("\n");
         }
         return llista.toString();
     }
-    
-    private String getNomComplet(Persona persona) {
-        return persona.getNom() + " " + persona.getCognom();
-       
-    }
 }
+
+
 
 public class MoveMethod {
 

@@ -2,8 +2,8 @@ package org.entdes.refactor;
 
 public class Calculadora {
 
-    public final double  IVA1 = 0.21;
-    public final double  IVA2 = 0.1;
+    public static final double  IVAGeneral = 0.21;
+    public static final double  IVAReduit = 0.1;
 
     public int calcularAreaRectangle(int altura, int base) {
         return multiplicar(altura, base);
@@ -30,10 +30,10 @@ public class Calculadora {
         double impost = 0; 
         switch (opcio) {
             case 1:
-                impost = IVA1;
+                impost = IVAGeneral;
                 break;  
             case 2:
-                impost = IVA2;
+                impost = IVAReduit;
                 break;
             default:
                 break;
